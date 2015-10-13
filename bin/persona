@@ -1,0 +1,3 @@
+#!/bin/bash
+
+TOKEN=$(curl -sS -u TOKEN:SECRET http://persona/oauth/tokens -d 'grant_type=client_credentials'|sed -e 's/{"access_token":"\(.*\)","expires_in":\(.*\),"token_type":"\(.*\)","scope":"\(.*\)"}/\1/g')
