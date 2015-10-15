@@ -11,7 +11,7 @@ YELLOW='\e[0;33m'
 PURPLE='\e[0;35m'
 WHITE='\e[0;37m'
 
-PS1="\[$GREEN\]\t\[$RED\]-\[$BLUE\]\u\[$YELLOW\]\[$YELLOW\]\w\[\033[m\]\[$PURPLE\]\$(__git_ps1)\[$WHITE\]\$ "
+PS1="\h: \w\[$YELLOW\]\$(__git_ps1)\[$WHITE\] $ 
 
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
