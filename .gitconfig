@@ -3,3 +3,11 @@
 # Please adapt and uncomment the following lines:
 	name = Richard Gubby
 	email = 
+[alias]
+	st = status
+	sta = status
+	stat = status
+	statu = status
+	ci = commit
+	pul = pull
+	pus = push
