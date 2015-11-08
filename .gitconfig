@@ -8,6 +8,7 @@
 	sta = status
 	stat = status
 	statu = status
+	sattus = status
 	ci = commit
 	pul = pull
 	pus = push
