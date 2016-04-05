@@ -17,3 +17,12 @@ export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
 PATH=$PATH:~/bin
+
+cd() {
+    command cd $@;
+    CURRENT_PWD=`pwd`
+    if [ -f "$CURRENT_PWD/.nvmrc" ] ; then
+        nvm use >/dev/null
+    fi
+}
+
