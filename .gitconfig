@@ -11,7 +11,9 @@
 	sattus = status
 	sattus = status
 	sttus = status
+	stastus = status
 	ci = commit
 	pul = pull
 	pus = push
 	cehckout = checkout
+	checkour = checkout
