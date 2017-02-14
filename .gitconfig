@@ -17,3 +17,5 @@
 	pus = push
 	cehckout = checkout
 	checkour = checkout
+[fetch]
+	prune = true
