@@ -17,5 +17,6 @@
 	pus = push
 	cehckout = checkout
 	checkour = checkout
+	dif = diff
 [fetch]
 	prune = true
