@@ -22,7 +22,11 @@ cd() {
     command cd $@;
     CURRENT_PWD=`pwd`
     if [ -f "$CURRENT_PWD/.nvmrc" ] ; then
-        nvm use >/dev/null
+	CURRENT_NODE_VERSION=`nvm current|sed -e 's/^v//'`
+        REQUIRED_NODE_VERSION=`nvm which|grep -Eo '<(.*)>'|sed -e 's/[<>]//g'`
+        if [ "$CURRENT_NODE_VERSION" != "$REQUIRED_NODE_VERSION" ] ; then
+            nvm install >/dev/null
+        fi
     fi
 }
 
