@@ -24,8 +24,9 @@
 	untracked = !git ls-files --others --exclude-standard
 	untracked-add = !git ls-files --others --exclude-standard|xargs git add
 	deleted = !git status|grep deleted|awk '{print $2}'
-	deleted-rm = !git status|grep deleted|awk '{print $2}'|xargs rm
+	deleted-rm = !git status|grep deleted|awk '{print $2}'|xargs git rm
 	current-branch = !git rev-parse --abbrev-ref HEAD
+	current = current-branch
 	unstage = reset HEAD --
 [fetch]
 	prune = true
