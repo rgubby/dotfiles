@@ -28,5 +28,6 @@
 	current-branch = !git rev-parse --abbrev-ref HEAD
 	current = current-branch
 	unstage = reset HEAD --
+	fire = !git checkout -b fire/$USER-$(date +%s) && git stage -A && git commit -n -m ':fire: there is a fire!' && git push origin fire/$USER-$(date +%s)
 [fetch]
 	prune = true
