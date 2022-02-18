@@ -21,8 +21,10 @@
 	dif = diff
 	modified = !git status|grep modified|awk '{print $2}'
 	modified-add = !git status|grep modified|awk '{print $2}'|xargs git add
+	modified-restore = !git status | grep modified | awk '{print $2}' | xargs git restore
 	untracked = !git ls-files --others --exclude-standard
 	untracked-add = !git ls-files --others --exclude-standard|xargs git add
+	untracked-rm = !git ls-files --others --exclude-standard | xargs rm
 	deleted = !git status|grep deleted|awk '{print $2}'
 	deleted-rm = !git status|grep deleted|awk '{print $2}'|xargs git rm
 	current-branch = !git rev-parse --abbrev-ref HEAD
