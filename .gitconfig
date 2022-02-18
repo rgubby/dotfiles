@@ -31,5 +31,7 @@
 	current = current-branch
 	unstage = reset HEAD --
 	fire = !git checkout -b fire/$USER-$(date +%s) && git stage -A && git commit -n -m ':fire: there is a fire!' && git push origin fire/$USER-$(date +%s)
+	soft = reset HEAD^ --soft
+	hard = reset HEAD^ --hard
 [fetch]
 	prune = true
