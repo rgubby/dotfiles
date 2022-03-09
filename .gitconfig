@@ -28,10 +28,15 @@
 	deleted = !git status|grep deleted|awk '{print $2}'
 	deleted-rm = !git status|grep deleted|awk '{print $2}'|xargs git rm
 	current-branch = !git rev-parse --abbrev-ref HEAD
+	current-repo = !git ls-remote --get-url $(git config --get branch.$(git branch --show-current).remote)
+	current-repo-url = !git ls-remote --get-url $(git config --get branch.$(git branch --show-current).remote)|sed 's~git@github.com:~https://github.com/~'|sed 's~.git$~~'
 	current = current-branch
 	unstage = reset HEAD --
 	fire = !git checkout -b fire/$USER-$(date +%s) && git stage -A && git commit -n -m ':fire: there is a fire!' && git push origin fire/$USER-$(date +%s)
 	soft = reset HEAD^ --soft
 	hard = reset HEAD^ --hard
+	create-pr = !open "`git current-repo-url`/pull/new/`git current`"
+	pr-number = ! git ls-remote origin "pull/*/head" | grep "`git rev-parse HEAD`" | awk -F '/' '{print $3}'
+	pr = "! sh -c 'PR=$(git pr-number) && if [[ -n $PR ]]; then open "`git current-repo-url`/pull/$PR"; else git create-pr; fi'"
 [fetch]
 	prune = true
