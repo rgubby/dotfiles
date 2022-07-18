@@ -4,6 +4,7 @@
 	name = 
 	email = 
 [alias]
+	rebae = rebase
 	st = status
 	sta = status
 	stat = status
