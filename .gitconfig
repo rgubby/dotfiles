@@ -39,7 +39,8 @@
 	create-pr = !open "`git current-repo-url`/pull/new/`git current`"
 	pr-number = ! git ls-remote origin "pull/*/head" | grep "`git rev-parse HEAD`" | awk -F '/' '{print $3}'
 	pr = "! sh -c 'PR=$(git pr-number) && if [[ -n $PR ]]; then open "`git current-repo-url`/pull/$PR"; else git create-pr; fi'"
-	empty = !git commit --allow-empty -n -m \"chore: trigger build\" && git push origin `git curr
-ent`
+	empty = !git commit --allow-empty -n -m \"chore: trigger build\" && git push origin `git current`
+	pushoriginu = !git pushorigin -u
+        pushorigin = !git push origin `git current`
 [fetch]
 	prune = true
