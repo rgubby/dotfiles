@@ -43,5 +43,6 @@
 	pushoriginu = !git pushorigin -u
         pushorigin = !git push origin `git current`
 	main = !git rev-parse --verify main 2>/dev/null && git switch main || git switch master
+	mainpull = !git main && git pull
 [fetch]
 	prune = true
